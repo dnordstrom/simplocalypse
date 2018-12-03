@@ -17,10 +17,10 @@ class Results {
   }
 
   render() {
-    let div = document.createElement('div');
-    let iterations = this.results.length;
-    let totalDays = this.results.reduce((prev, curr) => prev + curr, 0);
-    let averageDays = totalDays / iterations;
+    const div = document.createElement('div');
+    const iterations = this.results.length;
+    const totalDays = this.results.reduce((prev, curr) => prev + curr, 0);
+    const averageDays = totalDays / iterations;
     
     div.innerText =
       `Simulation ran ${iterations} times. Town lifespan expectancy is ${averageDays} days.`;
@@ -71,8 +71,10 @@ class Simulation {
     this.day++;
 
     /* For each zombie, enter a random house */
+    let randomHouseNumber;
+
     for (let zombie = 0; zombie < this.zombies; zombie++) {
-      let randomHouseNumber = Math.floor(Math.random() * this.houses.length);
+      randomHouseNumber = Math.floor(Math.random() * this.houses.length);
       
       /* `false` means house is not yet infected */
       if (!this.houses[randomHouseNumber]) {
@@ -113,7 +115,7 @@ class Simulation {
     this.options.container.innerHTML = '';
     
     this.houses.forEach(house => {
-      let div = document.createElement('div');
+      const div = document.createElement('div');
 
       div.className = `house ${house ? 'infected' : ''}`;
       div.innerText = house ? 'X' : 'O';
