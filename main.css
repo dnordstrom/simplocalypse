@@ -1,0 +1,19 @@
+html {
+  font-family: Hack, monospace;
+}
+
+#app {
+}
+
+.house {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  font-weight: bold;
+  line-height: 50px;
+  text-align: center;
+}
+
+.house.infected {
+  color: red;
+}
